@@ -1,0 +1,10 @@
+struct cli_command {
+    char *command;
+    int *(*handler)(const char *);
+};
+
+struct cli_command cmds[] = {
+    {"help", help_handler},
+    {"setled", set_led_handler},
+    {"getled", get_led_handler},
+};
