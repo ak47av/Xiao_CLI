@@ -1,3 +1,0 @@
-/home/arun/pico/serialScratch/build/pioasm/CMakeFiles/pioasm.dir
-/home/arun/pico/serialScratch/build/pioasm/CMakeFiles/edit_cache.dir
-/home/arun/pico/serialScratch/build/pioasm/CMakeFiles/rebuild_cache.dir
