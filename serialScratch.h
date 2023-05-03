@@ -16,20 +16,23 @@
 #define RED_LED 17
 #define BLUE_LED 25
 
-#define COMMAND_LENGTH 9 // length of command including null character
+#define COMMAND_LENGTH 8 // length of command including null character
 
-// typedef void *(*command_handler)(const char *);
-// typedef struct  {
-//     char *command_string;
-//     command_handler handler;
-// }cli_command;
+#define TOTAL_NO_COMMANDS 3
 
-// struct cli_command cmds[] = {
-//     {"toggleRd", toggle_red_led},
-//     {"toggleGr", toggle_green_led},
-//     {"toggleBl", toggle_blue_led},
-// };
+typedef struct  {
+    char *command_string;
+    void (*handler)();
+}cli_command;
 
-// void toggle_red_led(const char* command);
-// void toggle_green_led(const char* comamnd);
-// void toggle_blue_led(const char* command); 
+void toggle_red_led();
+void toggle_green_led();
+void toggle_blue_led(); 
+
+cli_command cmds[] = {
+    {"toggleRd", toggle_red_led},
+    {"toggleGr", toggle_green_led},
+    {"toggleBl", toggle_blue_led},
+};
+
+void recv_and_reply(uart_inst_t* uart);
